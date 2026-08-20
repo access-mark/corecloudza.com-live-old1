@@ -1,0 +1,1622 @@
+:root{
+  --bg:#030913; --bg2:#071322; --ink:#f6f9fc; --muted:#b9c7d6; --soft:#7f90a4;
+  --blue:#22c8ff; --blue2:#0a83d8; --blue3:#083f75; --gold:#d8b34a; --gold2:#f1cc62;
+  --glass:rgba(9,27,47,.42); --glass2:rgba(255,255,255,.045); --line:rgba(170,222,255,.18); --line2:rgba(216,179,74,.18);
+  --radius:22px; --radius-sm:14px; --shadow:0 24px 80px rgba(0,0,0,.42); --max:1220px;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body:before{content:"";position:fixed;inset:0;z-index:-5;background:
+ radial-gradient(circle at 17% 12%,rgba(34,200,255,.20),transparent 26%),
+ radial-gradient(circle at 83% 7%,rgba(216,179,74,.09),transparent 23%),
+ radial-gradient(circle at 70% 78%,rgba(11,97,177,.22),transparent 32%),
+ linear-gradient(135deg,#02060c 0%,#071326 48%,#020710 100%)}
+body:after{content:"";position:fixed;inset:0;z-index:-4;background-image:linear-gradient(rgba(145,213,255,.038) 1px,transparent 1px),linear-gradient(90deg,rgba(145,213,255,.038) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(circle at 56% 32%,#000 0%,transparent 70%);opacity:.58;pointer-events:none}.aurora{position:fixed;inset:auto -10% -22% -10%;height:46vh;z-index:-3;background:radial-gradient(ellipse at 26% 52%,rgba(34,200,255,.14),transparent 42%),radial-gradient(ellipse at 78% 42%,rgba(216,179,74,.10),transparent 36%);filter:blur(42px);pointer-events:none}
+a{color:inherit;text-decoration:none}.container{width:min(var(--max),calc(100% - 64px));margin:0 auto}.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(24px);background:linear-gradient(180deg,rgba(3,9,19,.86),rgba(3,9,19,.56));border-bottom:1px solid rgba(255,255,255,.07)}.nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{display:flex;align-items:center;gap:12px}.brand img{height:44px;width:auto;filter:drop-shadow(0 0 18px rgba(34,200,255,.36))}.brand-name{font-size:22px;letter-spacing:-.045em;font-weight:700}.links{display:flex;align-items:center;gap:23px;font-size:13px;color:#d9e4ef}.links a{opacity:.78;transition:.18s ease}.links a:hover{opacity:1;color:var(--blue)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:11px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.035);color:#fff;font-size:13px;font-weight:620;letter-spacing:-.01em;box-shadow:inset 0 1px 0 rgba(255,255,255,.08);transition:.22s ease}.btn:hover{transform:translateY(-1px);border-color:rgba(34,200,255,.48);box-shadow:0 16px 42px rgba(0,0,0,.32),0 0 26px rgba(34,200,255,.12)}.btn.primary{background:linear-gradient(135deg,rgba(34,200,255,.72),rgba(7,93,165,.72));border-color:rgba(111,219,255,.72);box-shadow:0 0 30px rgba(34,200,255,.18),inset 0 1px 0 rgba(255,255,255,.24)}.btn.gold{border-color:rgba(216,179,74,.38);background:rgba(216,179,74,.05)}
+.hero{position:relative;min-height:calc(100vh - 78px);display:flex;align-items:center;padding:52px 0 42px}.hero-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:58px;align-items:center}.eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--blue);font-weight:720}.eyebrow.gold{color:var(--gold2)}h1{margin:18px 0 0;font-size:clamp(44px,5vw,68px);line-height:1.02;letter-spacing:-.064em;font-weight:760;max-width:760px}.gradient-text{background:linear-gradient(120deg,#fff 0%,#dfeaf4 45%,#50d8ff 86%);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{font-size:17px;line-height:1.72;color:#d4dfeb;max-width:610px;margin:22px 0 0}.hero-actions{display:flex;gap:13px;margin-top:28px;flex-wrap:wrap}.microline{width:56px;height:2px;background:linear-gradient(90deg,var(--gold2),transparent);margin:22px 0 0}.status{display:flex;gap:26px;justify-content:center;padding:22px 0 0;color:#aab9c9;font-size:13px}.status span{display:flex;align-items:center;gap:9px}.status i{color:var(--gold);font-style:normal}.control{position:relative;min-height:500px}.core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:210px;height:210px;border-radius:50%;display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 35% 25%,rgba(63,205,255,.18),rgba(8,29,52,.78) 56%,rgba(2,7,14,.96));border:1px solid rgba(184,231,255,.43);box-shadow:0 0 0 15px rgba(34,200,255,.035),0 0 0 40px rgba(34,200,255,.018),0 24px 90px rgba(0,0,0,.42),0 0 70px rgba(34,200,255,.16),inset 0 1px 0 rgba(255,255,255,.20)}.core:before{content:"";position:absolute;inset:-40px;border-radius:50%;border:1px solid rgba(34,200,255,.23);border-right-color:rgba(216,179,74,.42);animation:spin 28s linear infinite}.core:after{content:"";position:absolute;inset:-70px;border-radius:50%;border:1px solid rgba(255,255,255,.06)}@keyframes spin{to{transform:rotate(360deg)}}.core img{width:68px;filter:drop-shadow(0 0 20px rgba(34,200,255,.7))}.core strong{display:block;margin-top:7px;font-size:15px}.core span{font-size:12px;color:#c8d6e3}.node{position:absolute;width:222px;min-height:86px;padding:17px 18px;display:flex;gap:14px;align-items:flex-start;background:linear-gradient(145deg,rgba(12,34,57,.54),rgba(5,15,27,.34));border:1px solid rgba(164,224,255,.26);border-radius:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.13),0 22px 70px rgba(0,0,0,.32);backdrop-filter:blur(26px);overflow:hidden}.node:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.09),transparent 34%,rgba(34,200,255,.04));opacity:.8}.node>*{position:relative}.node .icon{font-size:22px;color:var(--blue);line-height:1;opacity:.95}.node h3{margin:0 0 7px;font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:#8fe4ff;font-weight:760}.node p{margin:0;color:#d7e2ec;font-size:12.5px;line-height:1.46}.node.n1{left:14px;top:18px}.node.n2{left:0;top:157px}.node.n3{left:42px;bottom:24px}.node.n4{right:0;top:18px}.node.n5{right:0;top:157px}.node.n6{right:24px;bottom:24px}.connector{position:absolute;height:1px;background:linear-gradient(90deg,transparent,rgba(34,200,255,.78),transparent);opacity:.55}.c1{left:226px;top:83px;width:122px;transform:rotate(32deg)}.c2{left:221px;top:207px;width:135px}.c3{left:258px;bottom:100px;width:111px;transform:rotate(-33deg)}.c4{right:224px;top:83px;width:122px;transform:rotate(-32deg)}.c5{right:220px;top:207px;width:135px}.c6{right:248px;bottom:100px;width:111px;transform:rotate(33deg)}.partner-strip{margin-top:30px;padding:22px 24px;border-radius:22px;background:linear-gradient(120deg,rgba(255,255,255,.055),rgba(7,26,47,.26));border:1px solid rgba(173,226,255,.22);box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.12);display:grid;grid-template-columns:140px repeat(5,1fr);gap:16px;align-items:center;backdrop-filter:blur(26px)}.partner-strip .label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;line-height:1.55;color:#aebed0}.partner{border-left:1px solid rgba(255,255,255,.10);padding-left:18px;min-height:50px}.partner b{font-size:16px;letter-spacing:-.035em;font-weight:720}.partner small{display:block;color:#aebdcc;margin-top:5px;line-height:1.38;font-size:12px}.section{padding:86px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:30px}.section h2{font-size:clamp(31px,3.5vw,46px);line-height:1.08;letter-spacing:-.052em;margin:10px 0 0;max-width:770px}.section-head p{color:#bdcad5;line-height:1.7;max-width:530px;font-size:15px}.grid{display:grid;gap:18px}.grid.cols-4{grid-template-columns:repeat(4,1fr)}.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}.glass{position:relative;overflow:hidden;border-radius:var(--radius);padding:24px;background:linear-gradient(145deg,rgba(13,35,58,.48),rgba(5,15,27,.35));border:1px solid rgba(176,225,255,.18);box-shadow:0 24px 75px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.12);backdrop-filter:blur(28px)}.glass:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 16% 0%,rgba(34,200,255,.105),transparent 30%),radial-gradient(circle at 100% 100%,rgba(216,179,74,.065),transparent 24%);pointer-events:none}.glass>*{position:relative}.glass .kicker{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#83ddff;font-weight:760}.glass h3{font-size:18px;line-height:1.25;margin:16px 0 11px;letter-spacing:-.028em}.glass p,.glass li{color:#c3d0dc;line-height:1.66;font-size:13.5px}.glass ul{padding-left:18px;margin:14px 0 0}.feature-icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:20px;color:#8fe4ff;background:rgba(34,200,255,.075);border:1px solid rgba(34,200,255,.15);box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}.arrow{margin-top:16px;color:#dff5ff;font-size:18px}.split{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}.matrix{padding:26px;border-radius:22px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.033);backdrop-filter:blur(24px);box-shadow:inset 0 1px 0 rgba(255,255,255,.09)}.flow-row{display:grid;grid-template-columns:165px 1fr;gap:18px;align-items:center;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.075)}.flow-row:last-child{border-bottom:0}.flow-row b{color:#fff;font-size:14px}.flow-row span{color:#b6c3d0;font-size:14px;line-height:1.55}.quote{font-size:clamp(25px,3.2vw,42px);line-height:1.16;letter-spacing:-.052em;color:#fff;margin:0;max-width:980px}.footer{padding:48px 0;border-top:1px solid rgba(255,255,255,.08);color:#aab8c7;font-size:13px}.footer-inner{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}.footer b{color:#fff}.footer a{color:#dfe9f2}.page-hero{padding:82px 0 50px}.page-hero h1{max-width:860px}.page-hero .lead{max-width:760px}.breadcrumb{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}.mobile-toggle{display:none}.mobile-panel{display:none}.logo-only{height:42px;width:auto}.cap-map{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.cap-tile{min-height:160px}.cap-tile b{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);margin-bottom:12px}.cap-tile strong{display:block;font-size:24px;letter-spacing:-.045em;margin-bottom:10px}
+@media(max-width:1050px){.links{display:none}.mobile-toggle{display:inline-flex}.hero-grid,.split{grid-template-columns:1fr}.control{min-height:600px}.partner-strip{grid-template-columns:1fr 1fr}.grid.cols-4{grid-template-columns:repeat(2,1fr)}.grid.cols-3{grid-template-columns:repeat(2,1fr)}.mobile-panel.open{display:grid;gap:16px;padding:0 32px 24px}.mobile-panel a{color:#dce6ef}.nav-inner{height:74px}.brand img{height:42px}}
+@media(max-width:720px){.container{width:min(100% - 32px,var(--max))}.hero{padding-top:38px}.control{display:none}h1{font-size:40px}.lead{font-size:15.5px}.grid.cols-4,.grid.cols-3,.grid.cols-2,.cap-map{grid-template-columns:1fr}.partner-strip{grid-template-columns:1fr}.partner{border-left:0;border-top:1px solid rgba(255,255,255,.10);padding-left:0;padding-top:14px}.section-head{display:block}.footer-inner{display:block}.status{display:grid;gap:12px;justify-content:start}.brand-name{font-size:21px}.page-hero{padding-top:56px}.section{padding:64px 0}.flow-row{grid-template-columns:1fr;gap:6px}}
+
+
+/* --- CoreCloud 3.2 partner/logo/nav/AI atom polish --- */
+.nav-inner{height:96px}
+.brand img{height:88px;max-width:190px;object-fit:contain;filter:drop-shadow(0 0 28px rgba(34,200,255,.42))}
+.brand-name{display:none}
+.links a{position:relative;padding:9px 0;border-bottom:1px solid transparent}
+.links a.active{opacity:1;color:#fff;border-bottom-color:rgba(34,200,255,.72)}
+.links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:linear-gradient(90deg,rgba(34,200,255,.95),rgba(216,179,74,.65));box-shadow:0 0 18px rgba(34,200,255,.35)}
+.mobile-panel a.active{color:#fff;background:rgba(34,200,255,.08);border:1px solid rgba(34,200,255,.22);border-radius:12px;padding:10px 12px}
+.hero{min-height:calc(100vh - 96px)}
+
+.partner-strip{grid-template-columns:140px repeat(5,1fr);gap:14px}
+.partner{display:grid;grid-template-columns:46px 1fr;gap:12px;align-items:center;border-left:1px solid rgba(255,255,255,.10);padding-left:18px;min-height:68px}
+.partner-logo,.partner-card-logo{width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.18);object-fit:contain;padding:8px;box-shadow:0 12px 30px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.8)}
+.partner b{font-size:14.5px;line-height:1.1;letter-spacing:-.035em;font-weight:740}.partner small{font-size:11.5px}
+.partner-card{display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:start;min-height:210px}.partner-card-logo{width:64px;height:64px;border-radius:18px;padding:10px}.partner-card .kicker{margin-top:3px}.partner-card h3{margin-top:10px}.partner-card p{margin-bottom:0}.partner-name-small{display:block;color:#8fe4ff;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-top:10px}
+
+.ai-atoms{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;opacity:.52;mix-blend-mode:screen}
+.ai-atom{position:absolute;width:5px;height:5px;border-radius:50%;background:rgba(132,226,255,.72);box-shadow:0 0 16px rgba(34,200,255,.78),0 0 42px rgba(34,200,255,.28);animation:atomDrift var(--dur,22s) linear infinite;animation-delay:var(--delay,0s)}
+.ai-atom::before,.ai-atom::after{content:"";position:absolute;left:50%;top:50%;width:54px;height:1px;transform-origin:left center;background:linear-gradient(90deg,rgba(34,200,255,.42),transparent)}
+.ai-atom::before{transform:rotate(var(--angle,35deg))}.ai-atom::after{transform:rotate(calc(var(--angle,35deg) + 120deg))}
+.ai-atom.gold{background:rgba(216,179,74,.78);box-shadow:0 0 18px rgba(216,179,74,.65),0 0 36px rgba(216,179,74,.25)}
+.ai-atom.gold::before,.ai-atom.gold::after{background:linear-gradient(90deg,rgba(216,179,74,.38),transparent)}
+@keyframes atomDrift{0%{transform:translate3d(0,0,0) rotate(0deg);opacity:.18}10%{opacity:.58}50%{transform:translate3d(var(--dx,60px),var(--dy,-80px),0) rotate(180deg);opacity:.44}90%{opacity:.58}100%{transform:translate3d(calc(var(--dx,60px)*2),calc(var(--dy,-80px)*2),0) rotate(360deg);opacity:.16}}
+@media(max-width:1050px){.brand img{height:74px}.nav-inner{height:88px}.partner-strip{grid-template-columns:1fr 1fr}.partner{border-left:0;border-top:1px solid rgba(255,255,255,.10);padding-left:0;padding-top:14px}.mobile-panel.open{padding-top:8px}.ai-atoms{opacity:.34}}
+@media(max-width:720px){.brand img{height:64px}.nav-inner{height:82px}.partner{grid-template-columns:42px 1fr}.partner-logo{width:42px;height:42px}.partner-card{grid-template-columns:1fr}.partner-card-logo{width:56px;height:56px}.ai-atoms{display:none}}
+
+
+/* --- CoreCloud 3.3.1 micro-polish: visible atoms, local logos, refined icons --- */
+.hero h1{max-width:980px;white-space:normal;font-size:clamp(42px,4.55vw,64px);letter-spacing:-.058em}
+@media(min-width:1120px){.hero h1{white-space:nowrap}}
+.icon.line-mark,.feature-icon.line-mark{position:relative;color:transparent;font-size:0}
+.icon.line-mark::before,.feature-icon.line-mark::before{content:"";display:block;width:26px;height:26px;border-radius:999px;border:1px solid rgba(143,228,255,.72);box-shadow:0 0 22px rgba(34,200,255,.28),inset 0 0 14px rgba(34,200,255,.12)}
+.icon.line-mark::after,.feature-icon.line-mark::after{content:"";position:absolute;left:50%;top:50%;width:15px;height:1px;background:linear-gradient(90deg,rgba(216,179,74,.92),rgba(34,200,255,.75));transform:translate(-50%,-50%) rotate(-28deg);box-shadow:0 0 12px rgba(34,200,255,.25)}
+.feature-icon.line-mark{position:relative}.feature-icon.line-mark::before{width:24px;height:24px}.feature-icon.line-mark::after{width:14px}
+.partner-logo,.partner-card-logo{background:rgba(255,255,255,.98);padding:6px;filter:none}
+.partner-card-logo{padding:7px}.partner img{display:block}.partner-card img{display:block}
+.ai-atoms{opacity:.86;filter:saturate(1.25) brightness(1.2)}
+.ai-atom{width:7px;height:7px;background:rgba(142,231,255,.88);box-shadow:0 0 22px rgba(34,200,255,.95),0 0 58px rgba(34,200,255,.42)}
+.ai-atom::before,.ai-atom::after{width:82px;height:1px;background:linear-gradient(90deg,rgba(34,200,255,.66),rgba(34,200,255,.18),transparent)}
+.ai-atom.gold{background:rgba(216,179,74,.92);box-shadow:0 0 24px rgba(216,179,74,.9),0 0 54px rgba(216,179,74,.34)}
+.ai-atom.gold::before,.ai-atom.gold::after{background:linear-gradient(90deg,rgba(216,179,74,.58),rgba(216,179,74,.16),transparent)}
+@media(max-width:1050px){.ai-atoms{opacity:.58}}
+@media(max-width:720px){.hero h1{white-space:normal}.ai-atoms{display:block;opacity:.28}.ai-atom::before,.ai-atom::after{width:48px}}
+
+/* --- CoreCloud 3.4.2 executive polish: hero balance, HPE, visible partners, leadership contacts --- */
+.hero h1{font-size:clamp(46px,5.2vw,74px);line-height:.98;white-space:normal;max-width:780px;letter-spacing:-.062em;margin-top:16px}
+.hero h1 .gradient-text{display:inline-block;margin-top:2px}
+.hero-grid{grid-template-columns:minmax(0,0.92fr) minmax(520px,1.08fr);gap:48px}
+.control{min-height:665px}
+.node p{font-size:12.5px;line-height:1.35;color:#c5d5e2;max-width:210px}
+.node h3{font-size:13.5px}.node{width:218px}
+.partner-strip{grid-template-columns:160px repeat(5,minmax(150px,1fr));gap:18px;padding:22px;margin-top:54px;border-radius:28px;background:linear-gradient(135deg,rgba(6,23,43,.78),rgba(8,38,67,.42));border-color:rgba(143,228,255,.20)}
+.partner-strip .label{font-size:11px;letter-spacing:.18em;color:#e0f5ff;align-self:center;line-height:1.2}
+.partner{grid-template-columns:96px 1fr;gap:16px;min-height:104px;padding-left:20px;align-items:center}
+.partner-logo{width:96px;height:72px;border-radius:18px;padding:8px;background:#fff;box-shadow:0 18px 50px rgba(0,0,0,.32),0 0 24px rgba(34,200,255,.12),inset 0 1px 0 rgba(255,255,255,.9)}
+.partner b{font-size:15px;line-height:1.08;letter-spacing:-.035em}.partner small{font-size:11.5px;line-height:1.32;margin-top:6px}
+.partner-card{grid-template-columns:140px 1fr;gap:22px;min-height:240px;padding:28px}.partner-card-logo{width:140px;height:96px;border-radius:22px;padding:10px;background:#fff;box-shadow:0 18px 55px rgba(0,0,0,.35),0 0 28px rgba(34,200,255,.12)}
+.cap-tile strong{font-size:22px;line-height:1.13}.cap-tile p{font-size:13.5px}.cap-map{gap:20px}
+.contact-leaders .leader-card{min-height:410px}.leader-role{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);font-weight:760;margin-bottom:12px}.leader-card h3{font-size:32px;margin:0 0 8px;letter-spacing:-.05em}.leader-card strong{display:block;color:#e9f7ff;margin-bottom:14px}.leader-card ul{margin-bottom:22px}.assessment-panel h3{margin-top:0}
+.ai-atoms{opacity:.92}.ai-atom{width:8px;height:8px}.ai-atom::before,.ai-atom::after{width:96px}
+@media(max-width:1180px){.hero-grid{grid-template-columns:1fr}.control{max-width:720px;margin:0 auto}.partner-strip{grid-template-columns:1fr 1fr}.partner{border-left:0;border-top:1px solid rgba(255,255,255,.10);padding-left:0;padding-top:16px}.partner-card{grid-template-columns:112px 1fr}.partner-card-logo{width:112px;height:82px}}
+@media(max-width:720px){.hero h1{font-size:42px;line-height:1.02}.partner{grid-template-columns:86px 1fr}.partner-logo{width:86px;height:64px}.partner-card{grid-template-columns:1fr}.partner-card-logo{width:130px;height:90px}.contact-leaders .leader-card{min-height:auto}.leader-card h3{font-size:28px}}
+
+/* --- CoreCloud 3.5.1 refinement: clean hero infographic, no generic icons/logos --- */
+.hero-grid{grid-template-columns:minmax(0,.98fr) minmax(480px,1.02fr);gap:54px;align-items:center}
+.orchestration-board{min-height:0;width:100%;max-width:590px;margin-left:auto;padding:26px;border-radius:32px;background:linear-gradient(145deg,rgba(14,39,65,.58),rgba(4,13,25,.46));border:1px solid rgba(163,224,255,.22);box-shadow:0 34px 100px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.12);backdrop-filter:blur(30px);overflow:hidden}
+.orchestration-board:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 0%,rgba(34,200,255,.16),transparent 34%),radial-gradient(circle at 90% 100%,rgba(216,179,74,.10),transparent 30%);pointer-events:none}
+.board-header,.board-core{position:relative}.board-header{display:flex;align-items:center;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.08);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#9fdff4}.board-header strong{color:#fff;font-size:12px;letter-spacing:.13em}.board-core{padding:24px 0 2px;display:grid;justify-items:center;text-align:center}.board-outcome,.board-result{font-size:13px;color:#dbeaf4;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.045);border-radius:999px;padding:10px 16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}.board-line{width:1px;height:34px;background:linear-gradient(180deg,transparent,rgba(34,200,255,.72),rgba(216,179,74,.34),transparent);margin:9px 0}.board-center{width:176px;height:176px;border-radius:50%;display:grid;place-items:center;align-content:center;gap:8px;background:radial-gradient(circle at 34% 22%,rgba(56,209,255,.22),rgba(8,30,53,.80) 56%,rgba(3,9,18,.94));border:1px solid rgba(151,229,255,.42);box-shadow:0 0 0 14px rgba(34,200,255,.035),0 0 0 38px rgba(34,200,255,.015),0 24px 80px rgba(0,0,0,.38),0 0 70px rgba(34,200,255,.16),inset 0 1px 0 rgba(255,255,255,.18)}.board-center img{width:74px;filter:drop-shadow(0 0 22px rgba(34,200,255,.65))}.board-center span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#d9eef8}.board-grid{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:12px}.board-grid div{min-height:100px;text-align:left;padding:16px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}.board-grid b{display:block;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#8fe4ff;margin-bottom:9px}.board-grid small{display:block;color:#c3d2df;font-size:12.5px;line-height:1.45}.connector,.core,.node{display:none!important}.icon,.feature-icon,.line-mark,.arrow{display:none!important}
+.partner-logo,.partner-card-logo{display:none!important}.partner-strip.text-partners{grid-template-columns:160px repeat(5,minmax(140px,1fr));gap:16px}.partner-strip.text-partners .partner{display:block;min-height:96px;padding:18px 16px;border-left:1px solid rgba(255,255,255,.08);border-top:0;background:rgba(255,255,255,.025);border-radius:18px}.partner-strip.text-partners .partner b{font-size:15px;line-height:1.15}.partner-strip.text-partners .partner small{font-size:12px;line-height:1.45;color:#b9c7d6}.partner-card.text-only{display:block;min-height:250px}.partner-card.text-only .kicker{color:var(--gold2)}.partner-card.text-only h3{font-size:28px;line-height:1.08;margin:12px 0 10px}.partner-card.text-only .partner-name-small{margin:0 0 16px;color:#8fe4ff}.footer-inner{display:grid;grid-template-columns:1.15fr 1fr 1fr 1.25fr;gap:30px}.status{gap:18px}.status span{gap:8px}.glass{box-shadow:0 22px 72px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.10)}
+@media(max-width:1180px){.hero-grid{grid-template-columns:1fr}.orchestration-board{margin:30px auto 0}.partner-strip.text-partners{grid-template-columns:1fr 1fr}.partner-strip.text-partners .partner{border-left:0;border-top:1px solid rgba(255,255,255,.08)}}
+@media(max-width:780px){.orchestration-board{display:none}.partner-strip.text-partners{grid-template-columns:1fr}.footer-inner{display:block}.footer-inner>div{margin-bottom:22px}.hero h1{font-size:42px}.partner-card.text-only h3{font-size:24px}}
+
+
+/* --- CoreCloud 3.6 release candidate: restore dynamic hero orchestration graphic, keep 3.5 polish --- */
+.hero-actions .btn{justify-content:center;text-align:center}
+.orchestration-board{
+  position:relative;
+  min-height:540px;
+  width:100%;
+  max-width:none;
+  margin-left:auto;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+  overflow:visible;
+}
+.orchestration-board:before{display:none}
+.orchestration-board .core{width:226px;height:226px}
+.orchestration-board .core img{width:78px}
+.orchestration-board .node{
+  width:228px;
+  min-height:90px;
+  padding:20px 21px;
+  display:block;
+  background:linear-gradient(145deg,rgba(12,34,57,.62),rgba(5,15,27,.42));
+  border:1px solid rgba(164,224,255,.32);
+  border-radius:18px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 26px 78px rgba(0,0,0,.35);
+  backdrop-filter:blur(28px);
+}
+.orchestration-board .node:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,rgba(255,255,255,.095),transparent 34%,rgba(34,200,255,.052));
+  opacity:.8;
+}
+.orchestration-board .node>*{position:relative}
+.orchestration-board .node h3{font-size:12px;letter-spacing:.12em;color:#8fe4ff;margin:0 0 8px}
+.orchestration-board .node p{font-size:12.5px;line-height:1.48;color:#d7e2ec;margin:0}
+.orchestration-board .node.n1{left:8px;top:18px}
+.orchestration-board .node.n2{left:0;top:158px}
+.orchestration-board .node.n3{left:44px;bottom:24px}
+.orchestration-board .node.n4{right:0;top:18px}
+.orchestration-board .node.n5{right:0;top:158px}
+.orchestration-board .node.n6{right:24px;bottom:24px}
+.orchestration-board .connector{opacity:.62;height:1px;background:linear-gradient(90deg,transparent,rgba(34,200,255,.86),rgba(216,179,74,.42),transparent)}
+.orchestration-board .c1{left:230px;top:82px;width:122px;transform:rotate(32deg)}
+.orchestration-board .c2{left:225px;top:206px;width:136px}
+.orchestration-board .c3{left:262px;bottom:101px;width:116px;transform:rotate(-33deg)}
+.orchestration-board .c4{right:226px;top:82px;width:122px;transform:rotate(-32deg)}
+.orchestration-board .c5{right:225px;top:206px;width:136px}
+.orchestration-board .c6{right:252px;bottom:101px;width:116px;transform:rotate(33deg)}
+.footer b{line-height:1.45}
+.footer-inner div{line-height:1.72}
+@media(max-width:1180px){
+  .orchestration-board{max-width:720px;min-height:620px;margin:34px auto 0}
+}
+@media(max-width:780px){
+  .orchestration-board{display:none}
+}
+
+/* --- CoreCloud 3.6 RC2 final lock: restore 3.1-style hero system, remove icons/logos/arrows, tighten launch polish --- */
+.hero-actions .btn::after{content:none!important;display:none!important}
+.hero-actions .btn{gap:0!important}
+.status span i,.status span::before,.status span::after{display:none!important;content:none!important}
+.status{color:#d9e8f5;opacity:.84;letter-spacing:.02em}
+.status span+span{position:relative;padding-left:18px}
+.status span+span:before{content:""!important;display:block!important;position:absolute;left:0;top:50%;width:4px;height:4px;margin-top:-2px;border-radius:50%;background:rgba(216,179,74,.75);box-shadow:0 0 12px rgba(216,179,74,.45)}
+
+.orchestration-board .core,
+.orchestration-board .node,
+.orchestration-board .connector{display:block!important;position:absolute!important}
+.orchestration-board .core{display:grid!important;place-items:center!important;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 34% 22%,rgba(56,209,255,.28),rgba(8,30,53,.82) 56%,rgba(3,9,18,.94));border:1px solid rgba(151,229,255,.46);box-shadow:0 0 0 16px rgba(34,200,255,.04),0 0 0 46px rgba(34,200,255,.018),0 28px 90px rgba(0,0,0,.44),0 0 78px rgba(34,200,255,.2),inset 0 1px 0 rgba(255,255,255,.2);z-index:5}
+.orchestration-board .core>div{display:grid!important;place-items:center;text-align:center;gap:5px}
+.orchestration-board .core strong{font-size:18px;letter-spacing:-.03em;color:#fff}
+.orchestration-board .core span{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#9ee8ff;max-width:150px;line-height:1.35}
+.orchestration-board .core img{filter:drop-shadow(0 0 24px rgba(34,200,255,.7))}
+.orchestration-board .node{z-index:4;color:#fff}
+.orchestration-board .connector{z-index:1;transform-origin:center;animation:linePulse 4.6s ease-in-out infinite}
+@keyframes linePulse{0%,100%{opacity:.36;filter:blur(0)}50%{opacity:.82;filter:blur(.15px)}}
+.orchestration-board .node:after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:rgba(216,179,74,.92);box-shadow:0 0 18px rgba(216,179,74,.7);right:16px;top:16px}
+
+.partner-logo,.partner-card-logo,img.partner-logo,img.partner-card-logo{display:none!important}
+.partner-strip.text-partners .partner{border-color:rgba(151,229,255,.12)!important}
+.partner-strip.text-partners .partner b{color:#f4fbff}
+.partner-strip.text-partners .partner small{color:#b9c9d8}
+.footer-inner{align-items:start}
+.footer-inner a{color:#8fe4ff;text-decoration:none}.footer-inner a:hover{color:#fff}
+.footer-inner div:last-child b{color:#eaf7ff}
+@media(max-width:780px){.status span+span{padding-left:0}.status span+span:before{display:none!important}}
+
+.orchestration-board a.node{text-decoration:none;cursor:pointer;transition:all .25s ease}
+.orchestration-board a.node:hover{transform:translateY(-4px);border-color:rgba(34,200,255,.55)!important;box-shadow:0 0 28px rgba(34,200,255,.18),0 24px 80px rgba(0,0,0,.35)}
+.orchestration-board a.node.n5:hover{border-color:rgba(216,179,74,.8)!important}
+
+.hero-scroll{
+    display:flex;
+    justify-content:center;
+    margin-top:28px;
+}
+
+.scroll-cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 24px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.03);
+    color:#dfeaf4;
+    font-size:13px;
+    font-weight:600;
+    text-decoration:none;
+    transition:.25s ease;
+}
+
+.scroll-cta:hover{
+    transform:translateY(-2px);
+    border-color:rgba(34,200,255,.45);
+    box-shadow:0 0 18px rgba(34,200,255,.12);
+}
+.links .btn,
+.nav .btn {
+    padding: 15px 28px;
+}
+
+/* ==========================================================
+   PARTNER LINK INTERACTION (RC2 PRODUCTION)
+   ========================================================== */
+
+.partner,
+.partner-card{
+    cursor:pointer;
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+.partner:hover,
+.partner-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(34,200,255,.35);
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.25),
+        0 0 24px rgba(34,200,255,.10);
+}
+
+.partner:hover b,
+.partner-card:hover h3{
+    color:#8fe4ff;
+}
+
+.partner-link,
+.partner-card-link{
+    display:block;
+    color:inherit;
+    text-decoration:none;
+}
+
+.partner-link:hover,
+.partner-card-link:hover{
+    color:inherit;
+    text-decoration:none;
+}
+
+.partner-link:visited,
+.partner-card-link:visited{
+    color:inherit;
+}
+
+.partner-link:focus-visible,
+.partner-card-link:focus-visible{
+    outline:2px solid rgba(34,200,255,.55);
+    outline-offset:4px;
+    border-radius:18px;
+}
+
+/* ==========================================================
+   PARTNER PAGE LOGO BLOCKS
+   ========================================================== */
+
+.partner-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.partner-logo-wrap{
+    height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:22px;
+    padding-bottom:18px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.partner-logo{
+    max-width:220px;
+    max-height:60px;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    filter:brightness(1.05);
+    transition:transform .25s ease;
+}
+
+.partner-card:hover .partner-logo{
+    transform:scale(1.05);
+}
+
+.partner-card-link{
+    display:block;
+    color:inherit;
+    text-decoration:none;
+}
+
+.partner-card-link:hover{
+    color:inherit;
+    text-decoration:none;
+}
+
+/* ==========================================================
+   PARTNER PAGE LOGOS - RC2 PREMIUM LARGE
+   ========================================================== */
+
+.partner-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.partner-logo-wrap{
+    height:120px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:24px;
+
+    position:relative;
+
+    background:transparent !important;
+    border:none !important;
+    box-shadow:none !important;
+}
+
+.partner-logo-wrap::after{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:15%;
+    width:70%;
+    height:1px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.10),
+        transparent
+    );
+}
+
+.partner-card .partner-logo,
+.partner-card img.partner-logo{
+    display:block !important;
+
+    max-width:380px;
+    max-height:100px;
+
+    width:auto;
+    height:auto;
+
+    object-fit:contain;
+
+    background:transparent !important;
+    border:none !important;
+    box-shadow:none !important;
+    filter:none !important;
+
+    transition:transform .25s ease;
+}
+
+.partner-card:hover .partner-logo{
+    transform:scale(1.05);
+}
+
+.partner-card-link{
+    display:block;
+    color:inherit;
+    text-decoration:none;
+}
+
+.partner-card-link:hover{
+    color:inherit;
+    text-decoration:none;
+}
+
+
+/* ==========================================================
+   CoreCloudZA RB1.4 - Premium Experience Recovery
+   Purpose: restore premium card theatre, partner proof, and
+   executive conversion hierarchy without changing brand system.
+   ========================================================== */
+.rb14-page .glass,
+.premium-card,
+.assessment-card,
+.partner-card{
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease;
+}
+a.premium-card,
+a.glass.linked-card,
+a.assessment-card,
+a.marketplace-card,
+a.insight-card,
+a.featured-card{
+  cursor:pointer;
+  text-decoration:none;
+  color:inherit;
+}
+a.premium-card:hover,
+a.glass.linked-card:hover,
+a.assessment-card:hover,
+a.marketplace-card:hover,
+a.insight-card:hover,
+a.featured-card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(216,179,74,.34)!important;
+  box-shadow:0 26px 76px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.13);
+}
+.rb14-premium-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.rb14-premium-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.rb14-premium-grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.premium-card{position:relative;display:flex;flex-direction:column;min-height:300px;padding:30px;border-radius:28px;background:linear-gradient(150deg,rgba(14,32,50,.74),rgba(4,12,23,.56));border:1px solid rgba(216,179,74,.18);box-shadow:0 22px 70px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.10);overflow:hidden;backdrop-filter:blur(28px)}
+.premium-card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(216,179,74,.075),transparent 42%);pointer-events:none}
+.premium-card:after{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--gold2),rgba(216,179,74,.25),transparent)}
+.premium-card>*{position:relative}.premium-card .kicker{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(216,179,74,.86);font-weight:780}.premium-card h3{font-size:clamp(24px,2.4vw,34px);line-height:1.03;letter-spacing:-.055em;margin:20px 0 14px;color:#f4f8fb}.premium-card p{color:#bfccd7;line-height:1.72;font-size:14px}.premium-card .micro-list{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}.premium-card .micro-list span{font-size:11px;color:#dcecf6;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.045);border-radius:999px;padding:7px 10px}.premium-card .card-link{display:none!important}.premium-card .gradient-text{background:none!important;-webkit-text-fill-color:currentColor!important;color:inherit!important}
+.assessment-card{min-height:260px}.assessment-card h3{font-size:24px}.assessment-card:after{background:linear-gradient(180deg,var(--gold2),rgba(216,179,74,.22),transparent)}
+.executive-panel{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;border:1px solid rgba(216,179,74,.24);background:linear-gradient(120deg,rgba(216,179,74,.07),rgba(34,200,255,.05));border-radius:26px;padding:16px;box-shadow:0 26px 80px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.10)}
+.executive-panel div{padding:18px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}.executive-panel b{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);margin-bottom:8px}.executive-panel span{font-size:15px;color:#eef8ff;line-height:1.45;font-weight:650}
+.framework-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:20px}.framework-strip.six{grid-template-columns:repeat(6,1fr)}.framework-step{padding:18px 14px;border-radius:18px;text-align:center;background:rgba(255,255,255,.035);border:1px solid rgba(216,179,74,.15);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}.framework-step b{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(216,179,74,.88);margin-bottom:7px}.framework-step span{color:#d7e4ef;font-size:12.5px;line-height:1.45}
+.assessment-cta{margin-top:36px;padding:34px;border-radius:30px;background:linear-gradient(135deg,rgba(216,179,74,.13),rgba(34,200,255,.08),rgba(5,15,27,.62));border:1px solid rgba(216,179,74,.28);box-shadow:0 30px 90px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.12)}.assessment-cta h2{margin:0 0 12px}.assessment-cta p{color:#c8d6e2;max-width:760px;line-height:1.68}.assessment-cta .hero-actions{margin-top:20px}
+.partners-page .partner-logo,.partners-page .partner-card-logo,.partners-page img.partner-logo,.partners-page img.partner-card-logo{display:block!important}.partners-page .partner-logo-wrap{height:54px;display:flex;align-items:center;margin-bottom:18px}.partners-page .partner-logo{max-width:150px;max-height:46px;object-fit:contain;filter:drop-shadow(0 0 22px rgba(34,200,255,.18))}.partners-page .partner-card{min-height:310px}.partners-page .partner-card h3{font-size:30px}.partners-page .partner-name-small{display:block;color:#8fe4ff;margin:-4px 0 14px;font-size:13px;font-weight:650}.partners-page .ecosystem-proof{margin-top:36px}
+.marketplace-card{min-height:330px}.marketplace-card h3{font-size:32px}.marketplace-card:after,.insight-card:after,.featured-card:after{background:linear-gradient(180deg,var(--gold2),rgba(216,179,74,.22),transparent)!important}.insight-card{min-height:280px}.insight-card .article-count{font-size:11px;color:rgba(216,179,74,.86);letter-spacing:.14em;text-transform:uppercase;margin-top:auto;padding-top:18px}.featured-card{min-height:250px}
+.related-premium{margin-top:28px}.related-premium .premium-card{min-height:220px}.related-premium .premium-card h3{font-size:22px}
+@media(max-width:1180px){.rb14-premium-grid,.rb14-premium-grid.cols-3{grid-template-columns:repeat(2,1fr)}.framework-strip,.framework-strip.six{grid-template-columns:repeat(3,1fr)}.executive-panel{grid-template-columns:1fr}}
+@media(max-width:780px){.rb14-premium-grid,.rb14-premium-grid.cols-3,.rb14-premium-grid.cols-2{grid-template-columns:1fr}.framework-strip,.framework-strip.six{grid-template-columns:1fr}.premium-card{min-height:auto}.premium-card h3{font-size:26px}}
+
+/* Linked glass cards: full-card navigation without inline text links */
+a.glass.linked-card{display:block;border-color:rgba(216,179,74,.18);}
+a.glass.linked-card:hover{background:rgba(255,255,255,.055);}
+
+/* ----------------------------------------------------------
+   PARTNERS PAGE: LOGO BREATHING ROOM
+   ---------------------------------------------------------- */
+
+.partners-page .partner-card {
+    padding: 40px 32px 32px !important;
+}
+
+/* Give the logo area more top air and visual separation */
+.partners-page .partner-logo-wrap {
+    height: 128px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin-top: 10px !important;
+    margin-bottom: 30px !important;
+    padding: 12px 16px 26px !important;
+
+    border-bottom: 1px solid rgba(255,255,255,.08) !important;
+}
+
+/* Keep logos visible despite earlier global display:none rules */
+.partners-page .partner-card .partner-logo,
+.partners-page .partner-card img.partner-logo {
+    display: block !important;
+
+    max-width: 340px !important;
+    max-height: 92px !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    object-fit: contain !important;
+
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+}
+
+/* Better spacing below logo into text content */
+.partners-page .partner-card .kicker,
+.partners-page .partner-card .partner-name-small {
+    margin-top: 0 !important;
+}
+
+.partners-page .partner-card h3 {
+    margin-top: 12px !important;
+}
+
+/* Mobile adjustment */
+@media(max-width:780px) {
+    .partners-page .partner-card {
+        padding: 34px 26px 28px !important;
+    }
+
+    .partners-page .partner-logo-wrap {
+        height: 112px !important;
+        margin-top: 8px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .partners-page .partner-card .partner-logo,
+    .partners-page .partner-card img.partner-logo {
+        max-width: 260px !important;
+        max-height: 78px !important;
+    }
+}
+
+
+/* RB1.9 Advisory Platform Additions */
+.cta-panel{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}.cta-panel>div:first-child{max-width:760px}.assessment-link{text-decoration:none}.partner-text-mark{display:flex;align-items:center;justify-content:center;color:#d9b761;font-size:24px;letter-spacing:.02em}.guide-card,.assessment-card{min-height:360px}.disabled{opacity:.72}.process-grid .glass b{font-size:32px;color:#d9b761}.modal-backdrop{position:fixed;inset:0;background:rgba(2,7,13,.76);display:none;align-items:center;justify-content:center;z-index:100;padding:24px}.modal-backdrop.open{display:flex}.modal-card{max-width:560px;width:100%;position:relative}.modal-close{position:absolute;right:18px;top:14px;background:transparent;border:0;color:#fff;font-size:30px;cursor:pointer}.lead-form{display:grid;gap:14px}.lead-form input,.lead-form select,.lead-form textarea{width:100%;border:1px solid rgba(217,183,97,.22);background:rgba(255,255,255,.04);color:#fff;border-radius:14px;padding:14px 16px;font:inherit}.lead-form textarea{min-height:130px}.lead-form option{color:#07111f}.check{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:14px}.check input{width:auto;margin-top:3px}.form-note{color:#d9b761;font-size:14px}.assessment-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:28px;align-items:start}.assessment-form{display:grid;gap:28px}.assessment-section{border-top:1px solid rgba(217,183,97,.18);padding-top:24px}.question{padding:20px 0;border-bottom:1px solid rgba(255,255,255,.08)}.question h3{font-size:18px;margin-bottom:14px}.question label{display:block;margin:9px 0;color:var(--muted)}.question input{margin-right:8px}.assessment-side{position:sticky;top:110px}.result-panel{display:grid;grid-template-columns:220px 1fr;gap:30px;align-items:center}.score-block{width:180px;height:180px;border-radius:50%;border:1px solid rgba(217,183,97,.46);display:flex;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(circle,rgba(217,183,97,.18),rgba(255,255,255,.02))}.score-block span{font-size:58px;font-weight:760;color:#d9b761}.score-block small{color:var(--muted)}.mini{min-height:170px}@media(max-width:900px){.assessment-layout,.result-panel{grid-template-columns:1fr}.assessment-side{position:static}.cta-panel{align-items:flex-start}.score-block{width:150px;height:150px}.score-block span{font-size:46px}}
+
+/* RB1.9.1 Linked-card treatment: cards with href are the CTA, no inline card buttons */
+a.glass.linked-card,
+a.guide-card,
+a.assessment-card,
+a.partner-card-link,
+a.premium-card{
+  position:relative;
+  text-decoration:none!important;
+  color:inherit!important;
+  cursor:pointer;
+}
+a.glass.linked-card,
+a.guide-card,
+a.assessment-card{
+  display:block;
+  border-color:rgba(216,179,74,.26)!important;
+}
+a.glass.linked-card::after,
+a.guide-card::after,
+a.assessment-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  background:linear-gradient(135deg,rgba(216,179,74,.08),transparent 42%,rgba(34,200,255,.035));
+  opacity:.85;
+}
+a.glass.linked-card:hover,
+a.guide-card:hover,
+a.assessment-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(216,179,74,.56)!important;
+  box-shadow:0 30px 90px rgba(0,0,0,.42),0 0 0 1px rgba(216,179,74,.08),inset 0 1px 0 rgba(255,255,255,.14)!important;
+}
+.card-action{
+  display:inline-flex;
+  align-items:center;
+  margin-top:22px;
+  color:var(--gold2);
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-weight:780;
+}
+.card-action::after{
+  content:"";
+  width:34px;
+  height:1px;
+  margin-left:12px;
+  background:linear-gradient(90deg,var(--gold2),transparent);
+  transition:width .22s ease;
+}
+a:hover .card-action::after{width:54px;}
+.assessment-card.disabled{opacity:.88;}
+
+
+/* ==========================================================
+   RB1.9.2 AUDIT PATCHES
+   Purpose: restore balanced marketplace/advisory UX after RB1.9.1
+   ========================================================== */
+
+/* Homepage partner strip now carries 8 partners plus label.
+   Balance the layout as a premium 4-column proof grid rather than the old 5-partner strip. */
+.home-page .partner-strip.text-partners{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  align-items:stretch!important;
+}
+.home-page .partner-strip.text-partners .label{
+  grid-column:1 / -1;
+  min-height:auto;
+  padding:0 0 4px;
+  color:#d9b761;
+}
+.home-page .partner-strip.text-partners .partner{
+  min-height:118px!important;
+  height:100%;
+  display:flex!important;
+  flex-direction:column;
+  justify-content:flex-start;
+  border-left:0!important;
+  border-top:1px solid rgba(255,255,255,.08)!important;
+  padding:18px 16px!important;
+}
+.home-page .partner-strip.text-partners .partner b{
+  min-height:34px;
+}
+.home-page .partner-strip.text-partners .partner small{
+  flex:1;
+}
+
+/* Advisory/product cards: full-card links with clear visual affordance, not internal buttons. */
+a.glass.linked-card,
+a.guide-card,
+a.assessment-card,
+a.premium-card,
+a.marketplace-card,
+a.insight-card,
+a.featured-card{
+  min-height:300px;
+}
+.guides-page a.guide-card,
+.assessments-page a.assessment-card,
+.advisory-page a.glass.linked-card{
+  min-height:340px;
+}
+.card-action{
+  margin-top:auto;
+  padding-top:22px;
+}
+
+/* Keep disabled/coming-soon cards visually clickable only when intentionally linked. */
+.assessment-card.disabled{
+  border-style:dashed!important;
+}
+
+@media(max-width:1180px){
+  .home-page .partner-strip.text-partners{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .home-page .partner-strip.text-partners .label{grid-column:1 / -1;}
+}
+@media(max-width:780px){
+  .home-page .partner-strip.text-partners{grid-template-columns:1fr!important;}
+}
+
+/* RB2.0 static lead-capture additions */
+.capture-panel{margin-top:28px;padding:28px;border-radius:26px;border:1px solid rgba(217,183,97,.22);background:linear-gradient(135deg,rgba(216,179,74,.10),rgba(34,200,255,.045),rgba(5,15,27,.62));}
+.capture-panel h3{margin:8px 0 10px;font-size:24px;letter-spacing:-.035em}.capture-panel .muted{color:#aebdcc;line-height:1.62}.lead-form button[disabled]{opacity:.68;cursor:wait}.form-note{min-height:20px}.guide-note{font-size:13px;color:#aebdcc;margin-top:10px;line-height:1.55}
+
+/* ==========================================================
+   RB2.1 SEO + Conversion Refinement Patch
+   - Removes CTA underline regression on active Run Assessment button
+   - Compacts homepage assessment pathways
+   - Keeps linked cards visually premium without internal buttons
+   - Supports Assess Before You Invest section
+   ========================================================== */
+.btn,
+.btn:link,
+.btn:visited,
+.btn:hover,
+.btn:focus,
+.btn:active,
+.links a.btn,
+.links a.btn:link,
+.links a.btn:visited,
+.links a.btn:hover,
+.links a.btn:focus,
+.links a.btn:active{
+  text-decoration:none!important;
+}
+.links a.btn.active,
+.links a.btn.gold.active{
+  border-bottom-color:rgba(216,179,74,.38)!important;
+}
+.links a.btn.active::after,
+.links a.btn.gold.active::after{
+  display:none!important;
+  content:none!important;
+}
+
+.assessment-quick-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+.compact-assessment{
+  min-height:190px!important;
+  padding:24px!important;
+}
+.compact-assessment h3{
+  font-size:22px!important;
+  line-height:1.12!important;
+  margin:14px 0 10px!important;
+}
+.compact-assessment p{
+  font-size:13.5px!important;
+  line-height:1.55!important;
+  margin:0!important;
+}
+
+.home-page .rb14-premium-grid a.assessment-card,
+.home-page .rb14-premium-grid .assessment-card{
+  min-height:170px!important;
+  padding:22px!important;
+}
+.home-page .rb14-premium-grid .assessment-card h3{
+  font-size:22px!important;
+  line-height:1.12!important;
+  margin:12px 0 8px!important;
+}
+.home-page .rb14-premium-grid .assessment-card p{
+  font-size:13.5px!important;
+  line-height:1.5!important;
+  margin:0!important;
+}
+.home-page .rb14-premium-grid{
+  gap:16px!important;
+}
+
+.home-page .partner-strip.text-partners .partner:hover{
+  border-color:rgba(216,179,74,.42)!important;
+  box-shadow:0 22px 70px rgba(0,0,0,.32),0 0 0 1px rgba(216,179,74,.08),inset 0 1px 0 rgba(255,255,255,.12);
+  transform:translateY(-2px);
+}
+.home-page .partner-strip.text-partners .partner{
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+
+@media(max-width:980px){
+  .assessment-quick-grid{grid-template-columns:1fr;}
+  .compact-assessment{min-height:auto!important;}
+}
+
+/* RB2.1.1 hero orchestration layering fix: keep all workload/orchestration cards above the CoreCloud centre circle. */
+.home-page .orchestration-board {
+  isolation: isolate;
+}
+.home-page .orchestration-board .connector {
+  z-index: 2 !important;
+  pointer-events: none;
+}
+.home-page .orchestration-board .core {
+  z-index: 4 !important;
+  pointer-events: none;
+}
+.home-page .orchestration-board .core::before,
+.home-page .orchestration-board .core::after {
+  z-index: -1;
+}
+.home-page .orchestration-board .node {
+  z-index: 8 !important;
+}
+.home-page .orchestration-board .node.n5 {
+  z-index: 10 !important;
+}
+
+/* RB2.1.2 homepage infographic symmetry fix
+   - Locks the CoreCloud node to the mathematical centre
+   - Mirrors left/right cards on an even grid
+   - Uses fixed card dimensions so content length cannot shift visual balance
+   - Keeps all cards above the centre circle and connector lines
+*/
+.home-page .orchestration-board{
+  position:relative!important;
+  min-height:520px!important;
+  isolation:isolate;
+}
+.home-page .orchestration-board .core{
+  left:50%!important;
+  top:50%!important;
+  transform:translate(-50%,-50%)!important;
+  width:226px!important;
+  height:226px!important;
+  z-index:4!important;
+  pointer-events:none;
+}
+.home-page .orchestration-board .node{
+  box-sizing:border-box!important;
+  width:228px!important;
+  height:104px!important;
+  min-height:104px!important;
+  padding:18px 20px!important;
+  z-index:9!important;
+  display:flex!important;
+  align-items:center!important;
+}
+.home-page .orchestration-board .node h3{
+  margin:0 0 7px!important;
+}
+.home-page .orchestration-board .node p{
+  margin:0!important;
+  line-height:1.38!important;
+}
+.home-page .orchestration-board .node.n1{
+  left:0!important;
+  right:auto!important;
+  top:22px!important;
+  bottom:auto!important;
+}
+.home-page .orchestration-board .node.n2{
+  left:0!important;
+  right:auto!important;
+  top:50%!important;
+  bottom:auto!important;
+  transform:translateY(-50%)!important;
+}
+.home-page .orchestration-board .node.n3{
+  left:0!important;
+  right:auto!important;
+  top:auto!important;
+  bottom:22px!important;
+}
+.home-page .orchestration-board .node.n4{
+  right:0!important;
+  left:auto!important;
+  top:22px!important;
+  bottom:auto!important;
+}
+.home-page .orchestration-board .node.n5{
+  right:0!important;
+  left:auto!important;
+  top:50%!important;
+  bottom:auto!important;
+  transform:translateY(-50%)!important;
+  z-index:10!important;
+}
+.home-page .orchestration-board .node.n6{
+  right:0!important;
+  left:auto!important;
+  top:auto!important;
+  bottom:22px!important;
+}
+.home-page .orchestration-board a.node:hover{
+  transform:translateY(-4px)!important;
+}
+.home-page .orchestration-board a.node.n2:hover,
+.home-page .orchestration-board a.node.n5:hover{
+  transform:translateY(calc(-50% - 4px))!important;
+}
+.home-page .orchestration-board .connector{
+  z-index:2!important;
+  pointer-events:none!important;
+}
+.home-page .orchestration-board .c1{
+  left:225px!important;
+  top:88px!important;
+  width:132px!important;
+  transform:rotate(30deg)!important;
+}
+.home-page .orchestration-board .c2{
+  left:225px!important;
+  top:50%!important;
+  width:132px!important;
+  transform:translateY(-50%)!important;
+}
+.home-page .orchestration-board .c3{
+  left:225px!important;
+  bottom:88px!important;
+  width:132px!important;
+  transform:rotate(-30deg)!important;
+}
+.home-page .orchestration-board .c4{
+  right:225px!important;
+  top:88px!important;
+  width:132px!important;
+  transform:rotate(-30deg)!important;
+}
+.home-page .orchestration-board .c5{
+  right:225px!important;
+  top:50%!important;
+  width:132px!important;
+  transform:translateY(-50%)!important;
+}
+.home-page .orchestration-board .c6{
+  right:225px!important;
+  bottom:88px!important;
+  width:132px!important;
+  transform:rotate(30deg)!important;
+}
+@media(max-width:980px){
+  .home-page .orchestration-board{
+    min-height:auto!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+  }
+  .home-page .orchestration-board .core,
+  .home-page .orchestration-board .connector{
+    display:none!important;
+  }
+  .home-page .orchestration-board .node,
+  .home-page .orchestration-board .node.n1,
+  .home-page .orchestration-board .node.n2,
+  .home-page .orchestration-board .node.n3,
+  .home-page .orchestration-board .node.n4,
+  .home-page .orchestration-board .node.n5,
+  .home-page .orchestration-board .node.n6{
+    position:relative!important;
+    left:auto!important;
+    right:auto!important;
+    top:auto!important;
+    bottom:auto!important;
+    transform:none!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:96px!important;
+  }
+  .home-page .orchestration-board a.node:hover,
+  .home-page .orchestration-board a.node.n2:hover,
+  .home-page .orchestration-board a.node.n5:hover{
+    transform:translateY(-3px)!important;
+  }
+}
+
+/* ==========================================================
+   RB2.2 Hardening + SEO Polish
+   - Compact executive resource cards
+   - Normalize premium card density on homepage/advisory paths
+   - Keep linked-card affordance without excessive vertical whitespace
+   ========================================================== */
+
+/* Compact the three advisory resource groups called out during polish:
+   Executive Guides, Assessment Centre, and the homepage Knowledge/Insights cards. */
+.advisory-page .grid.cols-3 > a.glass.linked-card,
+.advisory-page .grid.cols-4 > a.glass.linked-card{
+  min-height:218px!important;
+  padding:22px 22px 20px!important;
+  display:flex!important;
+  flex-direction:column!important;
+}
+.advisory-page .grid.cols-3 > a.glass.linked-card h3,
+.advisory-page .grid.cols-4 > a.glass.linked-card h3{
+  font-size:21px!important;
+  line-height:1.14!important;
+  margin:12px 0 8px!important;
+}
+.advisory-page .grid.cols-3 > a.glass.linked-card p,
+.advisory-page .grid.cols-4 > a.glass.linked-card p{
+  font-size:13.5px!important;
+  line-height:1.52!important;
+  margin:0!important;
+}
+.advisory-page .grid.cols-3 > a.glass.linked-card .card-action,
+.advisory-page .grid.cols-4 > a.glass.linked-card .card-action{
+  margin-top:16px!important;
+  padding-top:0!important;
+}
+
+/* Homepage Knowledge Centre / Insights cards: reduce height and remove excess empty space. */
+.home-page .rb14-premium-grid.cols-3 > .premium-card,
+.home-page .rb14-premium-grid.cols-3 > a.premium-card{
+  min-height:220px!important;
+  padding:24px!important;
+}
+.home-page .rb14-premium-grid.cols-3 > .premium-card h3,
+.home-page .rb14-premium-grid.cols-3 > a.premium-card h3{
+  font-size:22px!important;
+  line-height:1.14!important;
+  margin:14px 0 10px!important;
+}
+.home-page .rb14-premium-grid.cols-3 > .premium-card p,
+.home-page .rb14-premium-grid.cols-3 > a.premium-card p{
+  font-size:13.5px!important;
+  line-height:1.54!important;
+  margin:0!important;
+}
+
+/* Keep compact card systems consistent across the conversion path. */
+.assessment-quick-grid > a.glass.linked-card,
+.home-page .rb14-premium-grid > a.assessment-card{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:flex-start!important;
+}
+.assessment-quick-grid > a.glass.linked-card .card-action{
+  margin-top:16px!important;
+  padding-top:0!important;
+}
+
+/* Global polish: linked card arrows should never be pushed into large empty bottom space in compact contexts. */
+.grid.cols-3 > a.glass.linked-card .card-action,
+.grid.cols-4 > a.glass.linked-card .card-action{
+  align-self:flex-start;
+}
+
+/* Production-ready 404 page support inherits the same premium shell. */
+.error-page .page-hero{min-height:62vh;display:flex;align-items:center;}
+.error-page .error-code{font-size:clamp(64px,12vw,148px);line-height:.88;letter-spacing:-.08em;color:rgba(216,179,74,.24);font-weight:780;margin:0 0 18px;}
+
+@media(max-width:780px){
+  .advisory-page .grid.cols-3 > a.glass.linked-card,
+  .advisory-page .grid.cols-4 > a.glass.linked-card,
+  .home-page .rb14-premium-grid.cols-3 > .premium-card,
+  .home-page .rb14-premium-grid.cols-3 > a.premium-card{
+    min-height:auto!important;
+  }
+}
+
+/* ==========================================================
+   RB2.2.1 Site-wide Card Compression Pass
+   Purpose: tighten remaining oversized card groups after RB2.2
+   without changing content, links, SEO, lead capture, or assessment logic.
+   ========================================================== */
+
+/* General linked glass cards: compact by default unless explicitly large. */
+.grid > a.glass.linked-card,
+.rb14-premium-grid > a.premium-card,
+.rb14-premium-grid > .premium-card,
+.rb14-premium-grid > a.assessment-card,
+.rb14-premium-grid > .assessment-card{
+  min-height:240px!important;
+  padding:24px!important;
+}
+.grid > a.glass.linked-card h3,
+.rb14-premium-grid > a.premium-card h3,
+.rb14-premium-grid > .premium-card h3,
+.rb14-premium-grid > a.assessment-card h3,
+.rb14-premium-grid > .assessment-card h3{
+  font-size:22px!important;
+  line-height:1.14!important;
+  margin:14px 0 9px!important;
+}
+.grid > a.glass.linked-card p,
+.rb14-premium-grid > a.premium-card p,
+.rb14-premium-grid > .premium-card p,
+.rb14-premium-grid > a.assessment-card p,
+.rb14-premium-grid > .assessment-card p{
+  font-size:13.5px!important;
+  line-height:1.54!important;
+  margin:0!important;
+}
+.grid > a.glass.linked-card .card-action,
+.rb14-premium-grid > a.premium-card .card-action,
+.rb14-premium-grid > a.assessment-card .card-action{
+  margin-top:16px!important;
+  padding-top:0!important;
+}
+
+/* Advisory pillar cards have micro chips, so keep medium but not tall. */
+.advisory-page .rb14-premium-grid > a.premium-card{
+  min-height:270px!important;
+}
+.advisory-page .rb14-premium-grid > a.premium-card .micro-list{
+  margin-top:14px!important;
+  gap:7px!important;
+}
+.advisory-page .rb14-premium-grid > a.premium-card .micro-list span{
+  padding:6px 9px!important;
+}
+
+/* Framework cards are explanatory, not hero cards: compress heavily. */
+.advisory-page .rb14-premium-grid > .premium-card:not(a){
+  min-height:205px!important;
+  padding:22px!important;
+}
+.advisory-page .rb14-premium-grid > .premium-card:not(a) h3{
+  font-size:20px!important;
+}
+
+/* Guides and assessments pages: compact card grids, keep premium affordance. */
+.guides-page a.guide-card,
+.assessments-page a.assessment-card,
+.assessments-page .assessment-card{
+  min-height:255px!important;
+  padding:24px!important;
+}
+.guides-page a.guide-card h3,
+.assessments-page a.assessment-card h3,
+.assessments-page .assessment-card h3{
+  font-size:22px!important;
+  line-height:1.14!important;
+  margin:14px 0 9px!important;
+}
+.guides-page a.guide-card p,
+.assessments-page a.assessment-card p,
+.assessments-page .assessment-card p{
+  font-size:13.5px!important;
+  line-height:1.54!important;
+}
+.guides-page a.guide-card .micro-list,
+.assessments-page a.assessment-card .micro-list,
+.assessments-page .assessment-card .micro-list{
+  margin-top:14px!important;
+}
+.guides-page a.guide-card .card-action,
+.assessments-page a.assessment-card .card-action{
+  margin-top:16px!important;
+  padding-top:0!important;
+}
+
+/* Marketplace cards previously had a large hero treatment; make them denser. */
+.marketplace-card,
+a.marketplace-card{
+  min-height:270px!important;
+  padding:25px!important;
+}
+.marketplace-card h3,
+a.marketplace-card h3{
+  font-size:25px!important;
+  line-height:1.12!important;
+  margin:14px 0 10px!important;
+}
+.marketplace-card p,
+a.marketplace-card p{
+  font-size:13.5px!important;
+  line-height:1.55!important;
+}
+
+/* Insight cards and featured article cards: reduce whitespace and keep cards scan-friendly. */
+.insight-card,
+a.insight-card,
+.featured-card,
+a.featured-card{
+  min-height:230px!important;
+  padding:24px!important;
+}
+.insight-card h3,
+a.insight-card h3,
+.featured-card h3,
+a.featured-card h3{
+  font-size:22px!important;
+  line-height:1.14!important;
+  margin:14px 0 9px!important;
+}
+.insight-card p,
+a.insight-card p,
+.featured-card p,
+a.featured-card p{
+  font-size:13.5px!important;
+  line-height:1.54!important;
+}
+.insight-card .article-count{
+  margin-top:16px!important;
+  padding-top:0!important;
+}
+
+/* Partner page cards keep logo presence but reduce excess vertical depth. */
+.partners-page .partner-card{
+  min-height:280px!important;
+  padding:30px 28px 28px!important;
+}
+.partners-page .partner-logo-wrap{
+  height:94px!important;
+  margin-top:0!important;
+  margin-bottom:20px!important;
+  padding:8px 12px 18px!important;
+}
+.partners-page .partner-card .partner-logo,
+.partners-page .partner-card img.partner-logo{
+  max-width:280px!important;
+  max-height:74px!important;
+}
+.partners-page .partner-card h3{
+  font-size:25px!important;
+  line-height:1.1!important;
+  margin:10px 0 9px!important;
+}
+.partners-page .partner-card p{
+  font-size:13.5px!important;
+  line-height:1.55!important;
+}
+
+/* Homepage partner ecosystem cards: maintain readable proof but reduce height. */
+.home-page .partner-strip.text-partners .partner{
+  min-height:96px!important;
+  padding:15px 15px!important;
+}
+.home-page .partner-strip.text-partners .partner b{
+  min-height:auto!important;
+  font-size:14px!important;
+}
+.home-page .partner-strip.text-partners .partner small{
+  font-size:11.5px!important;
+  line-height:1.38!important;
+}
+
+/* Related resource cards at page bottoms should be compact signposts. */
+.related-premium .premium-card,
+.related-premium a.premium-card{
+  min-height:190px!important;
+  padding:22px!important;
+}
+.related-premium .premium-card h3,
+.related-premium a.premium-card h3{
+  font-size:20px!important;
+  line-height:1.14!important;
+}
+
+/* Preserve mobile natural height to prevent clipping. */
+@media(max-width:780px){
+  .grid > a.glass.linked-card,
+  .rb14-premium-grid > a.premium-card,
+  .rb14-premium-grid > .premium-card,
+  .rb14-premium-grid > a.assessment-card,
+  .rb14-premium-grid > .assessment-card,
+  .guides-page a.guide-card,
+  .assessments-page a.assessment-card,
+  .assessments-page .assessment-card,
+  .marketplace-card,
+  a.marketplace-card,
+  .insight-card,
+  a.insight-card,
+  .featured-card,
+  a.featured-card,
+  .partners-page .partner-card,
+  .related-premium .premium-card,
+  .related-premium a.premium-card{
+    min-height:auto!important;
+  }
+}
+
+/* ==========================================================
+   RB2.2.3 Card Alignment System
+   Purpose: eliminate row-level text drift caused by wrapped titles,
+   varied logo/text blocks and inconsistent card anatomy.
+   Scope: CSS-only; no content, links, SEO, lead capture or routes changed.
+   ========================================================== */
+
+/* Strategic Ecosystem homepage strip: normalize text baselines across all cards,
+   including long names such as Hewlett Packard Enterprise and Hitachi Vantara. */
+.home-page .partner-strip.text-partners .partner{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:stretch!important;
+  align-items:stretch!important;
+  min-height:108px!important;
+  height:100%!important;
+}
+.home-page .partner-strip.text-partners .partner > div{
+  display:flex!important;
+  flex-direction:column!important;
+  height:100%!important;
+  min-height:0!important;
+}
+.home-page .partner-strip.text-partners .partner b{
+  display:flex!important;
+  align-items:flex-start!important;
+  min-height:38px!important;
+  line-height:1.18!important;
+  margin:0 0 7px!important;
+}
+.home-page .partner-strip.text-partners .partner small:first-of-type{
+  display:block!important;
+  min-height:32px!important;
+  margin:0!important;
+}
+.home-page .partner-strip.text-partners .partner small:last-of-type{
+  display:block!important;
+  margin-top:auto!important;
+  padding-top:8px!important;
+  color:rgba(216,179,74,.88)!important;
+}
+
+/* General linked-card anatomy: establish consistent vertical flow without forcing
+   excessive card heights. This keeps headings, descriptions and action markers aligned. */
+a.glass.linked-card,
+a.premium-card,
+a.guide-card,
+a.assessment-card,
+a.marketplace-card,
+a.insight-card,
+a.featured-card,
+.rb14-premium-grid > .premium-card,
+.assessments-page .assessment-card,
+.partners-page .partner-card{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:flex-start!important;
+}
+
+/* Kicker labels are short metadata. Lock their vertical footprint so titles begin consistently. */
+a.glass.linked-card .kicker,
+a.premium-card .kicker,
+a.guide-card .kicker,
+a.assessment-card .kicker,
+a.marketplace-card .kicker,
+a.insight-card .kicker,
+a.featured-card .kicker,
+.rb14-premium-grid > .premium-card .kicker,
+.assessments-page .assessment-card .kicker,
+.partners-page .partner-card .kicker{
+  display:block!important;
+  min-height:14px!important;
+  margin-bottom:10px!important;
+}
+
+/* Compact card titles: provide a consistent title band in grid cards while preserving readability. */
+.grid > a.glass.linked-card h3,
+.rb14-premium-grid > a.premium-card h3,
+.rb14-premium-grid > .premium-card h3,
+.rb14-premium-grid > a.assessment-card h3,
+.guides-page a.guide-card h3,
+.assessments-page a.assessment-card h3,
+.assessments-page .assessment-card h3,
+.marketplace-card h3,
+a.marketplace-card h3,
+.insight-card h3,
+a.insight-card h3,
+.featured-card h3,
+a.featured-card h3{
+  min-height:50px!important;
+  display:flex!important;
+  align-items:flex-start!important;
+}
+
+/* Smaller homepage pathway and quick-assessment cards should stay compact but aligned. */
+.home-page .rb14-premium-grid > a.assessment-card h3,
+.assessment-quick-grid > a.glass.linked-card h3{
+  min-height:32px!important;
+}
+
+/* Partner detail cards use logos; isolate logo variance from the text block. */
+.partners-page .partner-logo-wrap{
+  flex:0 0 86px!important;
+  height:86px!important;
+  min-height:86px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  margin:0 0 18px!important;
+  padding:6px 10px 14px!important;
+}
+.partners-page .partner-card .partner-logo,
+.partners-page .partner-card img.partner-logo{
+  max-height:68px!important;
+  width:auto!important;
+  object-fit:contain!important;
+}
+.partners-page .partner-card h3{
+  min-height:58px!important;
+  display:flex!important;
+  align-items:flex-start!important;
+}
+.partners-page .partner-card p{
+  margin-top:0!important;
+}
+
+/* Action rows should not float unpredictably in compact cards. */
+.card-action,
+a.glass.linked-card .card-action,
+a.guide-card .card-action,
+a.assessment-card .card-action,
+a.premium-card .card-action{
+  align-self:flex-start!important;
+  margin-top:16px!important;
+  padding-top:0!important;
+}
+
+/* Only use auto-pushed actions on intentionally taller product cards. */
+.guides-page a.guide-card .card-action,
+.assessments-page a.assessment-card .card-action,
+.marketplace-card .card-action,
+a.marketplace-card .card-action{
+  margin-top:auto!important;
+  padding-top:16px!important;
+}
+
+/* Mobile: allow natural content height to avoid clipping and awkward forced title blocks. */
+@media(max-width:780px){
+  .home-page .partner-strip.text-partners .partner,
+  .home-page .partner-strip.text-partners .partner b,
+  .home-page .partner-strip.text-partners .partner small:first-of-type,
+  .grid > a.glass.linked-card h3,
+  .rb14-premium-grid > a.premium-card h3,
+  .rb14-premium-grid > .premium-card h3,
+  .rb14-premium-grid > a.assessment-card h3,
+  .guides-page a.guide-card h3,
+  .assessments-page a.assessment-card h3,
+  .assessments-page .assessment-card h3,
+  .marketplace-card h3,
+  a.marketplace-card h3,
+  .insight-card h3,
+  a.insight-card h3,
+  .featured-card h3,
+  a.featured-card h3,
+  .partners-page .partner-card h3{
+    min-height:auto!important;
+  }
+  .partners-page .partner-logo-wrap{
+    flex-basis:auto!important;
+    height:auto!important;
+    min-height:64px!important;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   RB2.2.4 Capability Access Grid Balance
+   Purpose: normalize the Marketplace / Capability Access cards into
+   a symmetrical 3 x 2 layout and prevent copy density from creating
+   visual misalignment.
+   ---------------------------------------------------------- */
+.marketplaces-page .rb14-premium-grid.cols-3 {
+    align-items: stretch;
+}
+.marketplaces-page .marketplace-card {
+    min-height: 255px !important;
+    padding: 26px 28px !important;
+    justify-content: flex-start;
+}
+.marketplaces-page .marketplace-card h3 {
+    font-size: clamp(23px, 2vw, 28px) !important;
+    line-height: 1.08 !important;
+    margin: 16px 0 12px !important;
+    min-height: 60px;
+}
+.marketplaces-page .marketplace-card p {
+    font-size: 13.5px !important;
+    line-height: 1.58 !important;
+    margin: 0 !important;
+    max-width: 96%;
+}
+@media(max-width:1180px) {
+    .marketplaces-page .marketplace-card h3 {
+        min-height: auto;
+    }
+}
+@media(max-width:780px) {
+    .marketplaces-page .marketplace-card {
+        min-height: auto !important;
+    }
+}
+
+
+/* ----------------------------------------------------------
+   RB2.2.5 Live-Style Card Restoration
+   Purpose: restore ONLY the Authority Layer and Marketplace Models
+   cards to the live homepage premium-card visual treatment. Later
+   compression passes remain in place for other sections.
+   ---------------------------------------------------------- */
+.home-page .authority-layer-section .rb14-premium-grid,
+.marketplaces-page .marketplace-models-section .rb14-premium-grid{
+  gap:22px!important;
+  align-items:stretch!important;
+}
+.home-page .authority-layer-section .premium-card,
+.marketplaces-page .marketplace-models-section .premium-card,
+.marketplaces-page .marketplace-models-section .marketplace-card{
+  min-height:300px!important;
+  padding:30px!important;
+  border-radius:28px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:flex-start!important;
+  background:linear-gradient(150deg,rgba(14,32,50,.74),rgba(4,12,23,.56))!important;
+  border:1px solid rgba(216,179,74,.18)!important;
+  box-shadow:0 22px 70px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.10)!important;
+  overflow:hidden!important;
+  backdrop-filter:blur(28px)!important;
+}
+.home-page .authority-layer-section .premium-card .kicker,
+.marketplaces-page .marketplace-models-section .premium-card .kicker,
+.marketplaces-page .marketplace-models-section .marketplace-card .kicker{
+  min-height:auto!important;
+  margin:0!important;
+  font-size:10.5px!important;
+  letter-spacing:.18em!important;
+  text-transform:uppercase!important;
+  color:rgba(216,179,74,.86)!important;
+  font-weight:780!important;
+}
+.home-page .authority-layer-section .premium-card h3,
+.marketplaces-page .marketplace-models-section .premium-card h3,
+.marketplaces-page .marketplace-models-section .marketplace-card h3{
+  min-height:auto!important;
+  display:block!important;
+  font-size:clamp(24px,2.4vw,34px)!important;
+  line-height:1.03!important;
+  letter-spacing:-.055em!important;
+  margin:20px 0 14px!important;
+  color:#f4f8fb!important;
+}
+.home-page .authority-layer-section .premium-card p,
+.marketplaces-page .marketplace-models-section .premium-card p,
+.marketplaces-page .marketplace-models-section .marketplace-card p{
+  color:#bfccd7!important;
+  line-height:1.72!important;
+  font-size:14px!important;
+  margin:0!important;
+  max-width:none!important;
+}
+.home-page .authority-layer-section .premium-card .micro-list,
+.marketplaces-page .marketplace-models-section .premium-card .micro-list,
+.marketplaces-page .marketplace-models-section .marketplace-card .micro-list{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:8px!important;
+  margin:18px 0 0!important;
+}
+.home-page .authority-layer-section .premium-card .micro-list span,
+.marketplaces-page .marketplace-models-section .premium-card .micro-list span,
+.marketplaces-page .marketplace-models-section .marketplace-card .micro-list span{
+  font-size:11px!important;
+  color:#dcecf6!important;
+  border:1px solid rgba(255,255,255,.10)!important;
+  background:rgba(255,255,255,.045)!important;
+  border-radius:999px!important;
+  padding:7px 10px!important;
+}
+.home-page .authority-layer-section .premium-card:hover,
+.marketplaces-page .marketplace-models-section .premium-card:hover,
+.marketplaces-page .marketplace-models-section .marketplace-card:hover{
+  transform:translateY(-3px)!important;
+  border-color:rgba(216,179,74,.34)!important;
+  box-shadow:0 26px 76px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.13)!important;
+}
+@media(max-width:780px){
+  .home-page .authority-layer-section .premium-card,
+  .marketplaces-page .marketplace-models-section .premium-card,
+  .marketplaces-page .marketplace-models-section .marketplace-card{
+    min-height:auto!important;
+  }
+}
+
+/* RB2.3.1 logo home-link hardening */
+.nav .brand{position:relative;z-index:80;pointer-events:auto;cursor:pointer;text-decoration:none!important;}
+.nav .brand:hover,.nav .brand:focus,.nav .brand:active{text-decoration:none!important;}
+.nav .brand img,.nav .brand-name{pointer-events:none;}
+
+
+/* Operating Model Infographic - native HTML/CSS render for reliable GitHub Pages display */
+/* RB2.4 Operating Model Polish Pass */
+.operating-model-section{padding-top:72px;padding-bottom:86px}
+.cc-operating-model{position:relative;margin:34px auto 0;max-width:1120px;border-radius:30px;overflow:hidden;border:1px solid rgba(176,225,255,.22);background:radial-gradient(circle at 50% 0%,rgba(34,200,255,.18),transparent 36%),radial-gradient(circle at 100% 18%,rgba(216,179,74,.07),transparent 28%),linear-gradient(145deg,rgba(6,21,38,.96),rgba(3,11,22,.985));box-shadow:0 34px 110px rgba(0,0,0,.42),0 0 46px rgba(34,200,255,.09),inset 0 1px 0 rgba(255,255,255,.10);padding:34px;color:#f4f8fb}
+.cc-operating-model:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.028),transparent);pointer-events:none}
+.cc-om-header{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;margin-bottom:28px}
+.cc-om-kicker{text-transform:uppercase;letter-spacing:.20em;color:#d8b34a;font-weight:820;font-size:12px;margin-bottom:7px}
+.cc-om-title{text-transform:uppercase;letter-spacing:.085em;font-size:clamp(23px,3vw,39px);font-weight:840;line-height:1.05;color:#f7fbff;text-shadow:0 0 20px rgba(34,200,255,.08)}
+.cc-om-body{position:relative;display:grid;grid-template-columns:200px minmax(360px,1fr) 260px;gap:26px;align-items:center}
+.cc-om-loop{min-height:340px;border:1px dashed rgba(34,200,255,.38);border-radius:999px 0 0 999px;border-right:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 24px 24px 18px;color:#c7d6e4;background:linear-gradient(90deg,rgba(34,200,255,.045),transparent)}
+.cc-om-loop-mark{font-size:42px;line-height:1;color:#22c8ff;text-shadow:0 0 18px rgba(34,200,255,.35);margin:0 auto 12px}
+.cc-om-loop strong{text-transform:uppercase;letter-spacing:.12em;color:#22c8ff;font-size:13px;margin:0 auto 9px;display:block;max-width:150px}
+.cc-om-loop span{font-size:13px;line-height:1.5;max-width:142px;margin:0 auto;display:block}
+.cc-om-flow{display:flex;flex-direction:column;gap:13px;position:relative}
+.cc-om-step{position:relative;display:grid;grid-template-columns:76px 1fr;gap:18px;align-items:center;min-height:94px;padding:18px 22px;border-radius:18px;border:1px solid rgba(176,225,255,.21);background:linear-gradient(135deg,rgba(15,74,139,.78),rgba(4,20,39,.78));box-shadow:0 16px 40px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.10)}
+.cc-om-step:not(:last-child):after{content:"";position:absolute;left:50%;bottom:-12px;transform:translateX(-50%);width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid rgba(176,225,255,.72);filter:drop-shadow(0 0 8px rgba(34,200,255,.24));z-index:3}
+.cc-om-step:nth-child(2){background:linear-gradient(135deg,rgba(0,122,132,.75),rgba(5,35,51,.80))}
+.cc-om-step:nth-child(3){background:linear-gradient(135deg,rgba(78,56,146,.78),rgba(28,20,61,.82))}
+.cc-om-step:nth-child(4){background:linear-gradient(135deg,rgba(10,88,163,.78),rgba(5,25,48,.82))}
+.cc-om-step:nth-child(5){background:linear-gradient(135deg,rgba(7,48,94,.82),rgba(4,18,34,.88))}
+.cc-om-num{position:relative;z-index:1;width:56px;height:46px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(34,200,255,.18),rgba(255,255,255,.055));border:1px solid rgba(34,200,255,.36);font-weight:860;font-size:17px;letter-spacing:.06em;color:#22c8ff;box-shadow:0 0 18px rgba(34,200,255,.16),inset 0 1px 0 rgba(255,255,255,.12)}
+.cc-om-step strong{text-transform:uppercase;letter-spacing:.055em;font-size:clamp(18px,2vw,25px);line-height:1;color:#fff}
+.cc-om-step p{margin:7px 0 0;color:#d8e6f2;font-size:14px;line-height:1.45}
+.cc-om-notes{display:flex;flex-direction:column;gap:12px;border-left:1px solid rgba(176,225,255,.18);padding-left:22px}
+.cc-om-notes div{min-height:94px;display:flex;flex-direction:column;justify-content:center;gap:6px;color:#c7d6e4}
+.cc-om-notes b{color:#f7fbff;font-size:15px}.cc-om-notes span{font-size:13px;line-height:1.45}
+.cc-om-foundation,.cc-om-outcomes{position:relative;margin-top:24px;border:1px solid rgba(176,225,255,.16);border-radius:22px;background:rgba(255,255,255,.035);padding:20px}
+.cc-om-foundation-title,.cc-om-outcomes-title{text-align:center;text-transform:uppercase;letter-spacing:.18em;color:#d8b34a;font-size:12px;font-weight:820;margin-bottom:16px}
+.cc-om-foundation-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.cc-om-foundation-grid span{border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:16px 10px;text-align:center;text-transform:uppercase;letter-spacing:.05em;color:#e9f4fb;background:rgba(5,16,29,.52);font-weight:760;font-size:12px}
+.cc-om-outcome-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.cc-om-outcome-grid div{border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:16px 12px;text-align:center;background:rgba(5,16,29,.52)}.cc-om-outcome-grid b{display:block;text-transform:uppercase;color:#22c8ff;font-size:12px;letter-spacing:.07em;margin-bottom:8px}.cc-om-outcome-grid span{display:block;color:#c7d6e4;font-size:12px;line-height:1.42}
+.cc-om-caption{max-width:960px;margin:16px auto 0;text-align:center;color:#aebed0;font-size:13px;line-height:1.6}
+@media(max-width:980px){.cc-operating-model{padding:24px}.cc-om-body{grid-template-columns:1fr}.cc-om-loop{min-height:auto;border-radius:20px;border:1px dashed rgba(34,200,255,.38)}.cc-om-loop span{max-width:520px}.cc-om-notes{border-left:0;padding-left:0;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.cc-om-notes div{min-height:auto;border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:12px;background:rgba(255,255,255,.035)}.cc-om-foundation-grid{grid-template-columns:repeat(3,1fr)}.cc-om-outcome-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.operating-model-section{padding-top:54px;padding-bottom:64px}.cc-operating-model{padding:18px;border-radius:22px}.cc-om-header{flex-direction:column;text-align:center}.cc-om-step{grid-template-columns:60px 1fr;padding:16px;gap:14px}.cc-om-num{width:48px;height:40px}.cc-om-notes,.cc-om-foundation-grid,.cc-om-outcome-grid{grid-template-columns:1fr}.cc-om-title{font-size:22px}}
+
+/* CoreCloudZA Technology Orchestration Framework Expansion v1
+   Keep the existing infographic look; only allow cc-om-step anchors to behave like links. */
+a.cc-om-step{color:inherit;text-decoration:none;cursor:pointer;}
+a.cc-om-step:visited{color:inherit;}
+a.cc-om-step:hover{text-decoration:none;}
+
+/* Technology Orchestration linked-card affordance polish
+   Purpose: make existing linked methodology cards visibly interactive without changing layout. */
+a.cc-om-step{
+  transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease, filter .22s ease;
+}
+a.cc-om-step > div::after{
+  content:"Explore \2192";
+  display:inline-block;
+  margin-top:10px;
+  color:#d8b34a;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.78;
+  transition:opacity .22s ease, transform .22s ease;
+}
+a.cc-om-step:hover,
+a.cc-om-step:focus-visible{
+  transform:translateY(-4px);
+  border-color:rgba(216,179,74,.78);
+  box-shadow:0 22px 56px rgba(0,0,0,.34),0 0 0 1px rgba(216,179,74,.18),0 0 30px rgba(216,179,74,.16),inset 0 1px 0 rgba(255,255,255,.14);
+  filter:saturate(1.08);
+}
+a.cc-om-step:hover > div::after,
+a.cc-om-step:focus-visible > div::after{
+  opacity:1;
+  transform:translateX(4px);
+}
+a.cc-om-step:focus-visible{
+  outline:2px solid rgba(216,179,74,.95);
+  outline-offset:4px;
+}
+@media (hover:none){
+  a.cc-om-step > div::after{opacity:1;}
+  a.cc-om-step:hover{transform:none;}
+}
+
+/* --- CoreCloudZA production polish 29 Jun 2026: Lighthouse accessibility/performance hardening --- */
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.nav .links a,.mobile-panel a,.btn{min-height:44px;touch-action:manipulation}
+.nav .links a{display:inline-flex;align-items:center}
+.mobile-panel a{display:flex;align-items:center;padding:10px 0}
+img{height:auto;max-width:100%}
+@keyframes linePulse{0%,100%{opacity:.42}50%{opacity:.78}}
+.orchestration-board .connector{will-change:opacity;animation:linePulse 4.6s ease-in-out infinite}
+.btn,.premium-card,.linked-card,.glass,.partner-card{will-change:transform}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}}
+
+
+/* CoreLogiX narrative integration — additive only; preserves CoreCloud visual system */
+.corelogix-brand-card img{display:block;width:min(330px,78%);margin:0 auto 22px;filter:drop-shadow(0 18px 30px rgba(0,0,0,.32))}
+.corelogix-brand-card .micro-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.corelogix-brand-card .micro-list span{font-size:11px;color:#dcecf6;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.045);border-radius:999px;padding:7px 10px}
+.corelogix-hero-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.55fr);gap:48px;align-items:center}
+.corelogix-logo-panel{display:flex;align-items:center;justify-content:center;min-height:280px;border:1px solid rgba(176,225,255,.16);border-radius:26px;background:radial-gradient(circle at 50% 30%,rgba(34,200,255,.08),transparent 48%),rgba(255,255,255,.025);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.corelogix-logo-panel img{width:min(360px,88%);filter:drop-shadow(0 24px 40px rgba(0,0,0,.38))}
+@media(max-width:820px){.corelogix-hero-grid{grid-template-columns:1fr;gap:26px}.corelogix-logo-panel{min-height:210px}.corelogix-logo-panel img{width:min(290px,76%)}}
